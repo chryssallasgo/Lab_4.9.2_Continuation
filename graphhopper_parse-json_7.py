@@ -1,3 +1,8 @@
+#Team name: TEAMPOORAH
+#Member names: Iway, Mark Jorland
+#Allasgo, Chryssdale Heart
+#Marte, Ares Daniel
+#Lumapas, Nina Regene
 import requests
 import urllib.parse
 
@@ -64,15 +69,21 @@ while True:
         break
     orig = geocoding(loc1, key)
 
-
-    loc2 = input ("Destination: ")
+    loc2 = input("Destination: ")
     if loc2 == "quit" or loc2 == "q":
         break
     dest = geocoding(loc2, key)
+
+    reverse_route = input("Would you like to reverse the route? (yes/no): ").lower()
+    if reverse_route == "yes":
+        orig, dest = dest, orig
+    print(f"Route reversed: {orig[3]} → {dest[3]}")
+
+
     print("==============================================")
     if orig[0] == 200 and dest[0] == 200:
-        op="&point="+str(orig[1])+"%2C"+str(orig[2])
-        dp="&point="+str(dest[1])+"%2C"+str(dest[2])
+        op = "&point=" + str(orig[1]) + "%2C" + str(orig[2])
+        dp = "&point=" + str(dest[1]) + "%2C" + str(dest[2])
         paths_url = route_url + urllib.parse.urlencode({"key":key, "vehicle":vehicle}) + op + dp
         paths_status = requests.get(paths_url).status_code
         paths_data = requests.get(paths_url).json()
