@@ -473,7 +473,6 @@ namespace UniversityOfCebu
         {
             SearchDepartments(DepSearchtxt.Text.Trim());
         }
-        git
         private void SearchDepartments(string searchTerm)
         {
             try
