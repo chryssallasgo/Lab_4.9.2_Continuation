@@ -93,9 +93,24 @@ while True:
             for each in range(len(paths_data["paths"][0]["instructions"])):
                 path = paths_data["paths"][0]["instructions"][each]["text"]
                 distance = paths_data["paths"][0]["instructions"][each]["distance"]
-                print("{0} ( {1:.1f} km / {2:.1f} miles )".format(path, distance/1000,
-distance/1000/1.61))
+                print("{0} ( {1:.1f} km / {2:.1f} miles )".format(path, distance/1000, distance/1000/1.61))
             print("=============================================")
+            filename = f"{orig[3]}_to_{dest[3]}_by_{vehicle}.txt".replace(" ", "_").replace(",", "")
+            with open(filename, "w", encoding="utf-8") as file:
+                file.write(f"Trip from {orig[3]} to {dest[3]} by {vehicle}\n")
+                file.write("=================================================\n")
+                file.write(f"Distance: {miles:.1f} miles / {km:.1f} km\n")
+                file.write(f"Duration: {hr:02d}:{min:02d}:{sec:02d}\n")
+                file.write("=================================================\n")
+                file.write("Step-by-step Directions:\n")
+                for instruction in paths_data["paths"][0]["instructions"]:
+                    direction = instruction["text"]
+                    dist_km = instruction["distance"] / 1000
+                    dist_mi = dist_km / 1.61
+                    file.write(f"- {direction} ({dist_km:.1f} km / {dist_mi:.1f} miles)\n")
+                    file.write("=================================================\n")
+
+            print(f"Trip summary saved to file: {filename}")
         else:
             print("Error message: " + paths_data["message"])
             print("*************************************************")
