@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+    <meta http-equiv="content-type" content="text/html; charset=UTF-8" />
+    
+        <script>
+            L_NO_TOUCH = false;
+            L_DISABLE_3D = false;
+        </script>
+    
+    <style>html, body {width: 100%;height: 100%;margin: 0;padding: 0;}</style>
+    <style>#map {position:absolute;top:0;bottom:0;right:0;left:0;}</style>
+    <script src="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/leaflet@1.9.3/dist/leaflet.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css"/>
+    <link rel="stylesheet" href="https://netdna.bootstrapcdn.com/bootstrap/3.0.0/css/bootstrap-glyphicons.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.2.0/css/all.min.css"/>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css"/>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/python-visualization/folium/folium/templates/leaflet.awesome.rotate.min.css"/>
+    
+            <meta name="viewport" content="width=device-width,
+                initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+            <style>
+                #map_f5037abcaee50c3231adf9fb98a6047a {
+                    position: relative;
+                    width: 100.0%;
+                    height: 100.0%;
+                    left: 0.0%;
+                    top: 0.0%;
+                }
+                .leaflet-container { font-size: 1rem; }
+            </style>
+        
+</head>
+<body>
+    
+    
+            <div class="folium-map" id="map_f5037abcaee50c3231adf9fb98a6047a" ></div>
+        
+</body>
+<script>
+    
+    
+            var map_f5037abcaee50c3231adf9fb98a6047a = L.map(
+                "map_f5037abcaee50c3231adf9fb98a6047a",
+                {
+                    center: [40.3327259, -74.5847707],
+                    crs: L.CRS.EPSG3857,
+                    zoom: 13,
+                    zoomControl: true,
+                    preferCanvas: false,
+                }
+            );
+
+            
+
+        
+    
+            var tile_layer_664a5d1ae19fa50faeb29e005df3b086 = L.tileLayer(
+                "https://tile.openstreetmap.org/{z}/{x}/{y}.png",
+                {"attribution": "\u0026copy; \u003ca href=\"https://www.openstreetmap.org/copyright\"\u003eOpenStreetMap\u003c/a\u003e contributors", "detectRetina": false, "maxNativeZoom": 19, "maxZoom": 19, "minZoom": 0, "noWrap": false, "opacity": 1, "subdomains": "abc", "tms": false}
+            );
+        
+    
+            tile_layer_664a5d1ae19fa50faeb29e005df3b086.addTo(map_f5037abcaee50c3231adf9fb98a6047a);
+        
+    
+            var marker_0c90eb138c90d3a8e8427961d57e3f8f = L.marker(
+                [40.7127281, -74.0060152],
+                {}
+            ).addTo(map_f5037abcaee50c3231adf9fb98a6047a);
+        
+    
+            var icon_2bcfde7bfe844a1a2377e9cea06de543 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "green", "prefix": "glyphicon"}
+            );
+            marker_0c90eb138c90d3a8e8427961d57e3f8f.setIcon(icon_2bcfde7bfe844a1a2377e9cea06de543);
+        
+    
+        var popup_40e828769e50eb6224b096bd4ebbda0c = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_cfa892326fbcd3d0268f3f6e8015da81 = $(`<div id="html_cfa892326fbcd3d0268f3f6e8015da81" style="width: 100.0%; height: 100.0%;">Start: New York, New York, United States</div>`)[0];
+                popup_40e828769e50eb6224b096bd4ebbda0c.setContent(html_cfa892326fbcd3d0268f3f6e8015da81);
+            
+        
+
+        marker_0c90eb138c90d3a8e8427961d57e3f8f.bindPopup(popup_40e828769e50eb6224b096bd4ebbda0c)
+        ;
+
+        
+    
+    
+            var marker_292f32e5501fa202e058b2cfb3c0b065 = L.marker(
+                [39.9527237, -75.1635262],
+                {}
+            ).addTo(map_f5037abcaee50c3231adf9fb98a6047a);
+        
+    
+            var icon_80145709be022bb64809af92f1599268 = L.AwesomeMarkers.icon(
+                {"extraClasses": "fa-rotate-0", "icon": "info-sign", "iconColor": "white", "markerColor": "red", "prefix": "glyphicon"}
+            );
+            marker_292f32e5501fa202e058b2cfb3c0b065.setIcon(icon_80145709be022bb64809af92f1599268);
+        
+    
+        var popup_788e1f3958b8a97326cc6050e2949544 = L.popup({"maxWidth": "100%"});
+
+        
+            
+                var html_dc2abf22fdc2357aaf37bbeb4781e26c = $(`<div id="html_dc2abf22fdc2357aaf37bbeb4781e26c" style="width: 100.0%; height: 100.0%;">End: Philadelphia, Pennsylvania, United States</div>`)[0];
+                popup_788e1f3958b8a97326cc6050e2949544.setContent(html_dc2abf22fdc2357aaf37bbeb4781e26c);
+            
+        
+
+        marker_292f32e5501fa202e058b2cfb3c0b065.bindPopup(popup_788e1f3958b8a97326cc6050e2949544)
+        ;
+
+        
+    
+    
+            var poly_line_ff3b65255114a46a75a64b69e750d750 = L.polyline(
+                [[40.7127281, -74.0060152], [39.9527237, -75.1635262]],
+                {"bubblingMouseEvents": true, "color": "blue", "dashArray": null, "dashOffset": null, "fill": false, "fillColor": "blue", "fillOpacity": 0.2, "fillRule": "evenodd", "lineCap": "round", "lineJoin": "round", "noClip": false, "opacity": 0.8, "smoothFactor": 1.0, "stroke": true, "weight": 5}
+            ).addTo(map_f5037abcaee50c3231adf9fb98a6047a);
+        
+</script>
+</html>
